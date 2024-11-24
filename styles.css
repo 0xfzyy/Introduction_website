@@ -1,83 +1,276 @@
+/* Add a cool background animation */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff;
-    transition: background-color 0.5s;
+    background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    transition: background 0.5s ease, color 0.5s ease;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #333;
+    animation: backgroundAnimation 10s infinite alternate;
 }
 
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    }
+    50% {
+        background: linear-gradient(135deg, #e0f7fa, #f0f8ff);
+    }
+    100% {
+        background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    }
+}
+
+/* Add a cool header animation */
 header {
-    background-color: #4682b4;
+    background: linear-gradient(135deg, #4682b4, #1e90ff);
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+    animation: headerAnimation 5s infinite alternate;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+@keyframes headerAnimation {
+    0% {
+        background: linear-gradient(135deg, #4682b4, #1e90ff);
+    }
+    50% {
+        background: linear-gradient(135deg, #1e90ff, #4682b4);
+    }
+    100% {
+        background: linear-gradient(135deg, #4682b4, #1e90ff);
+    }
 }
 
-nav ul li {
-    margin: 0 15px;
+/* Cool animation for header text */
+header h1 {
+    font-size: 2.5em;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1e90ff, 0 0 40px #1e90ff, 0 0 50px #1e90ff, 0 0 60px #1e90ff, 0 0 70px #1e90ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #1e90ff, 0 0 40px #1e90ff, 0 0 50px #1e90ff, 0 0 60px #1e90ff, 0 0 70px #1e90ff, 0 0 80px #1e90ff;
+    }
 }
 
-nav ul li a:hover {
-    color: #ff6347;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Add cool animations for sections */
 section {
-    margin-bottom: 20px;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
-    width: 100%;
-    max-width: 800px;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transform: translateY(50px);
+    opacity: 0;
 }
 
-section:hover {
-    transform: scale(1.05);
-    background-color: #e6f7ff;
+section.visible {
+    transform: translateY(0);
+    opacity: 1;
 }
 
+/* Add a cool hover effect for links */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #4682b4;
+    text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+}
+
+/* Add a cool footer animation */
 footer {
-    background-color: #4682b4;
+    background: linear-gradient(135deg, #4682b4, #1e90ff);
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    animation: footerAnimation 5s infinite alternate;
 }
 
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
+@keyframes footerAnimation {
+    0% {
+        background: linear-gradient(135deg, #4682b4, #1e90ff);
+    }
+    50% {
+        background: linear-gradient(135deg, #1e90ff, #4682b4);
+    }
+    100% {
+        background: linear-gradient(135deg, #4682b4, #1e90ff);
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    transition: background 0.5s ease, color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    }
+    50% {
+        background: linear-gradient(135deg, #e0f7fa, #f0f8ff);
+    }
+    100% {
+        background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #4682b4, #1e90ff);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+/* Cool animation for header text */
+header h1 {
+    font-size: 2.5em;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1e90ff, 0 0 40px #1e90ff, 0 0 50px #1e90ff, 0 0 60px #1e90ff, 0 0 70px #1e90ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #1e90ff, 0 0 40px #1e90ff, 0 0 50px #1e90ff, 0 0 60px #1e90ff, 0 0 70px #1e90ff, 0 0 80px #1e90ff;
+    }
+}
+
+/* Cool animation for section elements */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+    animation: rotateBackground 10s linear infinite;
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Cool animation for links */
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6347;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Cool animation for footer */
+footer {
+    background: linear-gradient(135deg, #1e90ff, #4682b4);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    animation: footerShine 3s infinite;
+}
+
+@keyframes footerShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 确保链接在键盘导航时有可见的焦点样式 */
+nav ul li a:focus {
+    outline: 2px dashed #ff6347;
+    outline-offset: 4px;
+}
+
+/* 为中等屏幕添加响应式设计 */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        padding: 30px 15px;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    section {
+        padding: 25px;
     }
+}
+
+/* 为悬停效果添加更平滑的过渡 */
+section {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
