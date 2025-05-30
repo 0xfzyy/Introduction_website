@@ -1,4 +1,4 @@
 # Introduction_website
 
-A model intrduction website for builders
-.
+A model intrduction website for everyone
+
